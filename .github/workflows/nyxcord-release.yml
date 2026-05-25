@@ -1,0 +1,25 @@
+name: nyxcord-release
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i -g pnpm
+      - run: pnpm install --frozen-lockfile=false
+      - run: pnpm build
+      - name: Bundle dist
+        run: tar czf nyxcord-dist.tar.gz dist/
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: nyxcord-dist.tar.gz
+          generate_release_notes: true
