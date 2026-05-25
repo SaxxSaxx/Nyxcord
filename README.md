@@ -4,11 +4,22 @@ A personal-brand Discord client mod, forked from [Equicord](https://github.com/E
 
 What you get over vanilla Discord:
 
-- **Privacy presets on by default** — analytics + Sentry blocked, typing indicator hidden, crash recovery enabled.
+- **Privacy by default** — analytics + Sentry blocked (NoTrack), typing indicator hidden (SilentTyping), crash recovery enabled.
 - **Message history** — see deleted and edited messages.
-- **Quality-of-life plugins flipped on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
-- **Full Equicord plugin library** — 300+ optional plugins inherited from upstream, all toggleable in settings.
+- **QoL preset on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
+- **Identity / LARP bundle** — custom avatar (UserPFP), custom banner (USRBG), avatar decoration (Decor), and badge mirror (GlobalBadges), all synced cross-Nyxcord. Plus CustomUserColors, ShowBadgesInChat, MentionAvatars, BannersEverywhere to make your persona visible everywhere.
+- **Full Equicord plugin library** — 300+ optional plugins inherited from upstream, all toggleable.
 - **Auto-updates** — pulls from this repo on launch and prompts you when there's a new version.
+
+## Identity / LARP
+
+Nyxcord ships the identity-overlay plugins on by default so you can pick a persona and have other Nyxcord (and UserPFP/USRBG/Decor) users see it:
+
+- Open Discord → Settings → **Nyxcord** → find UserPFP / USRBG / Decor in the plugin list
+- Upload an avatar / banner / decoration to the respective ecosystem
+- Other Nyxcord users will see your custom persona; non-Nyxcord users still see your real Discord identity
+
+Custom **username** sync isn't here yet (no open-ecosystem plugin does it). It's planned as the marquee feature of a future paid tier with a Nyxcord-run backend.
 
 ## Install
 
