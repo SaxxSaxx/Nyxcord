@@ -1,119 +1,66 @@
-# [<img src="./browser/icon.png" width="40" align="left" alt="Equicord">](https://github.com/Equicord/Equicord) Equicord
+# Nyxcord
 
-[![Equibop](https://img.shields.io/badge/Equibop-grey?style=flat)](https://github.com/Equicord/Equibop)
-[![Tests](https://github.com/Equicord/Equicord/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Equicord/Equicord/actions/workflows/test.yml)
-[![Discord](https://img.shields.io/discord/1173279886065029291.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://equicord.org/discord)
+A personal-brand Discord client mod, forked from [Equicord](https://github.com/Equicord/Equicord) (itself a fork of [Vencord](https://github.com/Vendicated/Vencord)).
 
-Equicord is a fork of [Vencord](https://github.com/Vendicated/Vencord), with over 300+ plugins.
+What you get over vanilla Discord:
 
-You can join our [Discord server](https://equicord.org/discord) for commits, changes, chatting, or even support.
+- **Privacy presets on by default** — analytics + Sentry blocked, typing indicator hidden, crash recovery enabled.
+- **Message history** — see deleted and edited messages.
+- **Quality-of-life plugins flipped on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
+- **Full Equicord plugin library** — 300+ optional plugins inherited from upstream, all toggleable in settings.
+- **Auto-updates** — pulls from this repo on launch and prompts you when there's a new version.
 
-### Included Plugins
+## Install
 
-Our included plugins can be found [here](https://equicord.org/plugins).
+### macOS / Linux
 
-## Installing / Uninstalling
-
-Windows
-
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
-
-MacOS
-
-- [X64 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-x64.zip)
-- [ARM64 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-arm64.zip)
-
-Linux
-
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux)
-- [AUR](https://aur.archlinux.org/packages?O=0&K=equicord)
-
-```shell
-sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"
+```bash
+curl -fsSL https://raw.githubusercontent.com/SaxxSaxx/Nyxcord/main/install.sh | bash
 ```
 
-## Installing Equicord Devbuild
+Requires `git`, `node` (LTS), and `pnpm`. Install pnpm with `npm install -g pnpm` if you don't have it.
 
-### Dependencies
+### Windows
 
-[Git](https://git-scm.com/download) and [Node.JS LTS](https://nodejs.dev/en/) are required.
+1. Download [install.ps1](https://raw.githubusercontent.com/SaxxSaxx/Nyxcord/main/install.ps1).
+2. Right-click the file → **Run with PowerShell**.
+3. Restart Discord.
 
-Install `pnpm`:
+If Windows SmartScreen blocks the script, click "More info" → "Run anyway." (Nyxcord builds are not code-signed for now.)
 
-> :exclamation: This next command may need to be run as admin/root depending on your system, and you may need to close and reopen your terminal for pnpm to be in your PATH.
+### Build from source
 
-```shell
-npm i -g pnpm
-```
-
-> :exclamation: **IMPORTANT** Make sure you aren't using an admin/root terminal from here onwards. It **will** mess up your Discord/Equicord instance and you **will** most likely have to reinstall.
-
-Clone Equicord:
-
-```shell
-git clone https://github.com/Equicord/Equicord
-cd Equicord
-```
-
-Install dependencies:
-
-```shell
-pnpm install --frozen-lockfile
-```
-
-Build Equicord:
-
-```shell
+```bash
+git clone https://github.com/SaxxSaxx/Nyxcord
+cd Nyxcord
+pnpm install
 pnpm build
-```
-
-Inject Equicord into your desktop client:
-
-```shell
 pnpm inject
 ```
 
-Build Equicord for web:
+`pnpm inject` will ask which Discord variant to patch (Discord / Discord Canary / Discord PTB).
 
-```shell
-pnpm buildWeb
+## Uninstall
+
+```bash
+cd ~/.nyxcord    # or wherever you installed
+pnpm uninject
 ```
 
-After building Equicord's web extension, locate the appropriate ZIP file in the `dist` directory and follow your browser’s guide for installing custom extensions, if supported.
-
-Note: Firefox extension zip requires Firefox for developers
-
-## Credits
-
-Thank you to [Vendicated](https://github.com/Vendicated) for creating [Vencord](https://github.com/Vendicated/Vencord) & [Suncord](https://github.com/verticalsync/Suncord) by [verticalsync](https://github.com/verticalsync) for helping when needed.
-
-## Star History
-
-<a href="https://star-history.com/#Equicord/Equicord&Timeline">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Equicord/Equicord&type=Timeline" />
-  </picture>
-</a>
+That reverts Discord back to its original state. Safe and reversible.
 
 ## Disclaimer
 
-Discord is trademark of Discord Inc., and solely mentioned for the sake of descriptivity.
-Mentioning it does not imply any affiliation with or endorsement by Discord Inc.
-Vencord is not connected to Equicord and as such, all donation links go to Vendicated's donation link.
+Nyxcord is not affiliated with, authorized, or endorsed by Discord Inc. Use of third-party client modifications **violates Discord's Terms of Service**. Accounts using Nyxcord (or any Vencord-family client) may be flagged or banned.
 
-<details>
-<summary>Using Equicord violates Discord's terms of service</summary>
+**Use a secondary account.** Don't run Nyxcord on an account you care about losing.
 
-Client modifications are against Discord’s Terms of Service.
+## Credits
 
-However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using client mods! So you should generally be fine if you don’t use plugins that implement abusive behaviour. But no worries, all inbuilt plugins are safe to use!
+- [Vencord](https://github.com/Vendicated/Vencord) — the original architecture, the patching engine, the plugin API. Everything Nyxcord does at runtime is Vencord.
+- [Equicord](https://github.com/Equicord/Equicord) — direct upstream. Nyxcord rebases off Equicord weekly; almost all plugins come from there.
+- [Nightcord](https://github.com/nightcordoff/nightcord) — the inspiration for this build.
 
-Regardless, if your account is essential to you and getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Equicord), just to be safe.
+## License
 
-Additionally, make sure not to post screenshots with Equicord in a server where you might get banned for it.
-
-</details>
+GPL-3.0-or-later, inherited from Vencord and Equicord. See [LICENSE](./LICENSE).
