@@ -8,10 +8,10 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - **Repo URL:** `https://github.com/SaxxSaxx/Nyxcord`
 - **Mac install target:** `Discord` (stable)
 - **Preset plugins enabled by default:**
-  - NoTrack
+  - NoTrack (already `required: true` in upstream — always on, can't be toggled off)
   - MessageLogger
-  - NoTypingIndicator
-  - CrashHandler
+  - SilentTyping (Vencord's name for what we called NoTypingIndicator — same feature)
+  - CrashHandler (already `enabledByDefault: true` in upstream)
   - FakeNitro
   - ShowHiddenChannels
   - BetterFolders
