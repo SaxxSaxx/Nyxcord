@@ -5,7 +5,6 @@ set -euo pipefail
 
 OUT_DIR="docs/diagnostics/2026-05-28-sequoia-inject"
 DISCORD_APP="/Applications/Discord.app"
-DISCORD_BIN="$DISCORD_APP/Contents/MacOS/Discord"
 
 mkdir -p "$OUT_DIR"
 

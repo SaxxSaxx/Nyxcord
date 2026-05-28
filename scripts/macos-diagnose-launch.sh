@@ -10,11 +10,16 @@ CRASH_OUT="$OUT_DIR/crash-report.txt"
 
 mkdir -p "$OUT_DIR"
 
+# NOTE: AMFI/kernel messages on Sequoia with SIP enabled may require sudo.
+# If log-stream-launch.txt shows no AMFI or syspolicy lines after the run,
+# re-run this script with: sudo bash scripts/macos-diagnose-launch.sh
+echo "NOTE: if log-stream-launch.txt has no AMFI/syspolicy lines, re-run with: sudo bash scripts/macos-diagnose-launch.sh"
+
 echo "Starting log stream (10s window)..."
 # Filter on AMFI, syspolicy, taskgated, and any message mentioning Discord.
 log stream \
-    --predicate '(eventMessage CONTAINS[c] "Discord") OR (subsystem CONTAINS[c] "amfi") OR (subsystem CONTAINS[c] "syspolicy") OR (subsystem CONTAINS[c] "taskgated")' \
-    --info --debug --level=debug \
+    --predicate '(composedMessage CONTAINS[c] "Discord") OR (subsystem CONTAINS[c] "amfi") OR (subsystem CONTAINS[c] "syspolicy") OR (subsystem CONTAINS[c] "taskgated")' \
+    --level debug \
     > "$LOG_FILE" 2>&1 &
 LOG_PID=$!
 
