@@ -4,6 +4,7 @@ A personal-brand Discord client mod, forked from [Equicord](https://github.com/E
 
 What you get over vanilla Discord:
 
+- **Signature look (Nyx)** — a cosmic, void violet night sky theme with a nebula glow and an optional starfield, on by default. Where the popular Nightcord theme goes melancholic and underwater, Nyx goes regal and celestial, after Nyxcord's namesake (Nyx, the Greek primordial goddess of night).
 - **Privacy by default** — analytics + Sentry blocked (NoTrack), typing indicator hidden (SilentTyping), crash recovery enabled.
 - **Message history** — see deleted and edited messages.
 - **QoL preset on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
@@ -20,6 +21,14 @@ Nyxcord ships the identity-overlay plugins on by default so you can pick a perso
 - Other Nyxcord users will see your custom persona; non-Nyxcord users still see your real Discord identity
 
 Custom **username** sync isn't here yet (no open-ecosystem plugin does it). It's planned as the marquee feature of a future paid tier with a Nyxcord-run backend.
+
+## Signature look (Nyx)
+
+The **NyxcordTheme** plugin is on by default and gives Nyxcord its face: a void violet base, a nebula glow on links, mentions, the selected channel and primary buttons, and a faint starfield behind the app.
+
+- Tune it under Settings → **Nyxcord** → Plugins → **NyxcordTheme**: accent hue, glow strength, starfield on/off.
+- Toggle the plugin off for plain Equicord styling.
+- Power users can fork the standalone [`misc/Nyx.theme.css`](misc/Nyx.theme.css) and load it as a normal theme.
 
 ## Install
 

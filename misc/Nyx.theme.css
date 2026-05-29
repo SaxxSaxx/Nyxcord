@@ -1,0 +1,129 @@
+/**
+ * @name Nyx
+ * @author Saxx
+ * @description Nyxcord's signature theme. A cosmic, void violet night sky with a nebula glow and an optional starfield. Standalone version of the built in NyxcordTheme plugin, for power users to fork.
+ * @version 1.0.0
+ * @source https://github.com/SaxxSaxx/Nyxcord
+ */
+
+/*
+ * Drop this in your Vencord/Equicord themes folder, or import the raw URL as an
+ * online theme. The knobs below mirror the plugin's settings. Nyxcord users get
+ * this look out of the box via the NyxcordTheme plugin and do not need this file.
+ */
+
+:root {
+    /* Accent hue. 270 is Nyx violet. 240 leans indigo, 300 leans magenta. */
+    --nyx-accent-h: 270;
+    --nyx-accent-s: 85%;
+    --nyx-accent-l: 63%;
+
+    /* Nebula glow strength, 0 to 1. */
+    --nyx-glow: 0.45;
+
+    /* Starfield, 1 on or 0 off. */
+    --nyx-star-opacity: 1;
+}
+
+.theme-dark,
+.theme-darker,
+.theme-midnight {
+    --nyx-bg-0: hsl(258deg 34% 4%);
+    --nyx-bg-1: hsl(258deg 30% 6%);
+    --nyx-bg-2: hsl(257deg 27% 9%);
+    --nyx-bg-3: hsl(256deg 24% 12%);
+    --nyx-bg-4: hsl(255deg 22% 16%);
+    --nyx-line: hsl(255deg 20% 20%);
+    --nyx-accent: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) var(--nyx-accent-l, 63%));
+    --nyx-accent-soft: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) 56%);
+    --nyx-accent-deep: hsl(var(--nyx-accent-h, 270) calc(var(--nyx-accent-s, 85%) - 20%) 22%);
+    --background-primary: var(--nyx-bg-2);
+    --background-secondary: var(--nyx-bg-1);
+    --background-secondary-alt: var(--nyx-bg-1);
+    --background-tertiary: var(--nyx-bg-0);
+    --background-accent: var(--nyx-accent);
+    --background-floating: var(--nyx-bg-0);
+    --background-nested-floating: var(--nyx-bg-1);
+    --background-mobile-primary: var(--nyx-bg-2);
+    --background-mobile-secondary: var(--nyx-bg-1);
+    --channeltextarea-background: var(--nyx-bg-3);
+    --background-modifier-hover: hsl(var(--nyx-accent-h, 270) 30% 50% / 8%);
+    --background-modifier-active: hsl(var(--nyx-accent-h, 270) 40% 50% / 14%);
+    --background-modifier-selected: hsl(var(--nyx-accent-h, 270) 45% 50% / 18%);
+    --background-modifier-accent: var(--nyx-line);
+    --bg-base-lowest: var(--nyx-bg-0);
+    --bg-base-lower: var(--nyx-bg-0);
+    --bg-base-low: var(--nyx-bg-1);
+    --bg-base-secondary: var(--nyx-bg-1);
+    --bg-base-tertiary: var(--nyx-bg-2);
+    --bg-surface-overlay: var(--nyx-bg-1);
+    --bg-surface-overlay-tmp: var(--nyx-bg-1);
+    --bg-surface-raised: var(--nyx-bg-2);
+    --bg-surface-higher: var(--nyx-bg-3);
+    --bg-surface-highest: var(--nyx-bg-4);
+    --bg-mod-faint: hsl(var(--nyx-accent-h, 270) 30% 50% / 7%);
+    --bg-mod-subtle: hsl(var(--nyx-accent-h, 270) 35% 50% / 11%);
+    --bg-mod-strong: hsl(var(--nyx-accent-h, 270) 40% 50% / 16%);
+    --bg-mod-stronger: hsl(var(--nyx-accent-h, 270) 45% 50% / 22%);
+    --brand-experiment: var(--nyx-accent);
+    --brand-experiment-560: var(--nyx-accent-deep);
+    --brand-experiment-600: var(--nyx-accent-deep);
+    --brand-260: var(--nyx-accent-deep);
+    --brand-360: var(--nyx-accent-soft);
+    --brand-400: var(--nyx-accent-soft);
+    --brand-460: var(--nyx-accent);
+    --brand-500: var(--nyx-accent);
+    --brand-530: var(--nyx-accent);
+    --brand-560: var(--nyx-accent-deep);
+    --brand-600: var(--nyx-accent-deep);
+    --button-filled-brand-background: var(--nyx-accent);
+    --button-filled-brand-background-hover: var(--nyx-accent-soft);
+    --mention-foreground: white;
+    --mention-background: hsl(var(--nyx-accent-h, 270) 60% 50% / 28%);
+    --text-normal: hsl(250deg 18% 90%);
+    --text-default: hsl(250deg 18% 90%);
+    --text-muted: hsl(250deg 12% 56%);
+    --text-link: var(--nyx-accent-soft);
+    --header-primary: hsl(250deg 22% 96%);
+    --header-secondary: hsl(250deg 14% 66%);
+    --interactive-normal: hsl(250deg 12% 72%);
+    --interactive-hover: hsl(250deg 16% 88%);
+    --interactive-active: white;
+    --white-500: hsl(250deg 22% 96%);
+    --scrollbar-thin-thumb: var(--nyx-accent-deep);
+    --scrollbar-auto-thumb: var(--nyx-accent-deep);
+    --scrollbar-auto-track: var(--nyx-bg-0);
+    --focus-primary: var(--nyx-accent);
+}
+
+#app-mount a {
+    text-shadow: 0 0 calc(8px * var(--nyx-glow, 0.45)) hsl(var(--nyx-accent-h, 270) 90% 65% / var(--nyx-glow, 0.45));
+}
+
+#app-mount ::selection {
+    background: hsl(var(--nyx-accent-h, 270) 70% 55% / 40%);
+    text-shadow: none;
+}
+
+#app-mount::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: calc(0.5 * var(--nyx-star-opacity, 1));
+    mix-blend-mode: screen;
+    background-image:
+        radial-gradient(1px 1px at 12% 22%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1px 1px at 78% 14%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1.4px 1.4px at 33% 67%, var(--nyx-accent-soft) 50%, transparent 51%),
+        radial-gradient(1px 1px at 64% 51%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1px 1px at 90% 80%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1.4px 1.4px at 47% 89%, var(--nyx-accent-soft) 50%, transparent 51%),
+        radial-gradient(1px 1px at 20% 93%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1px 1px at 5% 55%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1px 1px at 55% 8%, hsl(250deg 30% 96%) 50%, transparent 51%),
+        radial-gradient(1.4px 1.4px at 84% 40%, var(--nyx-accent-soft) 50%, transparent 51%);
+    background-repeat: repeat;
+    background-size: 420px 420px, 520px 520px, 640px 640px, 380px 380px, 560px 560px, 700px 700px, 460px 460px, 600px 600px, 500px 500px, 660px 660px;
+}
