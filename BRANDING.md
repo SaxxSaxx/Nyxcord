@@ -3,7 +3,8 @@
 These values are referenced by all subsequent plan tasks. Do not change after Task 1 without re-reading every task.
 
 - **Client name:** `Nyxcord`
-- **Accent color (hex):** `#a855f7`
+- **Accent color (hex):** `#a855f7` (HSL hue 270, the Nyx violet used by the signature theme)
+- **Signature theme:** `NyxcordTheme` — void violet, nebula glow, optional starfield. On by default. Standalone fork at `misc/Nyx.theme.css`.
 - **GitHub owner:** `SaxxSaxx`
 - **Repo URL:** `https://github.com/SaxxSaxx/Nyxcord`
 - **Mac install target:** `Discord` (stable)
@@ -29,6 +30,9 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
   - MentionAvatars (avatars next to @mentions)
   - BannersEverywhere (banner shown in more UI surfaces)
 
+  Signature theme (v0.2.0):
+  - NyxcordTheme (void violet night-sky theme, nebula glow, starfield; settings: accent hue, glow, starfield)
+
 ## Roadmap
 
 - **Path A (v0.1.x):** open-ecosystem identity overlays, free. Done.
@@ -40,3 +44,4 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.1.0 shipped: 2026-05-25
 - v0.1.1 shipped: 2026-05-25 (updater e2e bump)
 - v0.1.2 shipped: 2026-05-25 (Identity bundle, Path A)
+- v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
