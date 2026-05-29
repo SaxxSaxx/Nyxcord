@@ -44,4 +44,4 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.1.0 shipped: 2026-05-25
 - v0.1.1 shipped: 2026-05-25 (updater e2e bump)
 - v0.1.2 shipped: 2026-05-25 (Identity bundle, Path A)
-- v0.2.0 (in progress): Nyx signature theme (NyxcordTheme, on by default)
+- v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
