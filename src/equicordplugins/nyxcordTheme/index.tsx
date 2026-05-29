@@ -11,17 +11,47 @@ import definePlugin, { makeRange, OptionType, StartAt } from "@utils/types";
 
 import styles from "./styles.css?managed";
 
-const NYX_VARS = ["--nyx-accent-h", "--nyx-accent-s", "--nyx-accent-l", "--nyx-glow", "--nyx-star-opacity"];
+const NYX_VARS = ["--nyx-bg-h", "--nyx-bg-s", "--nyx-accent-h", "--nyx-accent-s", "--nyx-accent-l", "--nyx-glow", "--nyx-star-opacity"];
+
+interface Variant {
+    accentHue: number;
+    glow: number;
+    starfield: boolean;
+    bgHue: number;
+    bgSat: number;
+}
+
+const VARIANTS: Record<string, Variant> = {
+    // Void violet. The default Nyx night sky.
+    nyx: { accentHue: 270, glow: 45, starfield: true, bgHue: 258, bgSat: 30 },
+    // Teal shimmer. Cooler, brighter, northern-lights mood.
+    aurora: { accentHue: 160, glow: 60, starfield: true, bgHue: 205, bgSat: 32 },
+    // Austere near-mono indigo. Quiet, low glow, no stars.
+    eclipse: { accentHue: 250, glow: 20, starfield: false, bgHue: 245, bgSat: 16 },
+    // Magenta nebula. Vibrant, high glow.
+    nebula: { accentHue: 305, glow: 70, starfield: true, bgHue: 268, bgSat: 34 }
+};
 
 function applyVars() {
-    const { accentHue, glow, starfield } = settings.store;
+    const { variant, accentHue, glow, starfield } = settings.store;
+    const v = VARIANTS[variant] ?? VARIANTS.nyx;
     const root = document.documentElement.style;
 
+    root.setProperty("--nyx-bg-h", String(v.bgHue));
+    root.setProperty("--nyx-bg-s", `${v.bgSat}%`);
     root.setProperty("--nyx-accent-h", String(accentHue));
     root.setProperty("--nyx-accent-s", "85%");
     root.setProperty("--nyx-accent-l", "63%");
     root.setProperty("--nyx-glow", String(glow / 100));
     root.setProperty("--nyx-star-opacity", starfield ? "1" : "0");
+}
+
+function applyVariant(variant: string) {
+    const v = VARIANTS[variant] ?? VARIANTS.nyx;
+    settings.store.accentHue = v.accentHue;
+    settings.store.glow = v.glow;
+    settings.store.starfield = v.starfield;
+    applyVars();
 }
 
 function clearVars() {
@@ -31,9 +61,20 @@ function clearVars() {
 }
 
 const settings = definePluginSettings({
+    variant: {
+        type: OptionType.SELECT,
+        description: "Mood preset. Picking one sets the accent, glow, background tint, and starfield. Fine-tune them below afterward.",
+        options: [
+            { label: "Nyx — void violet", value: "nyx", default: true },
+            { label: "Aurora — teal shimmer", value: "aurora" },
+            { label: "Eclipse — austere indigo", value: "eclipse" },
+            { label: "Nebula — magenta", value: "nebula" }
+        ],
+        onChange: applyVariant
+    },
     accentHue: {
         type: OptionType.SLIDER,
-        description: "Accent hue. 270 is Nyx violet. Slide toward 240 for indigo or 300 for magenta.",
+        description: "Accent hue. Slide to recolor links, mentions, the selected channel, and buttons.",
         markers: makeRange(0, 360, 30),
         default: 270,
         stickToMarkers: false,
@@ -41,7 +82,7 @@ const settings = definePluginSettings({
     },
     glow: {
         type: OptionType.SLIDER,
-        description: "Strength of the nebula glow on links, mentions, the selected channel, and primary buttons.",
+        description: "Strength of the nebula glow on accent text.",
         markers: makeRange(0, 100, 25),
         default: 45,
         stickToMarkers: false,
@@ -57,7 +98,7 @@ const settings = definePluginSettings({
 
 export default definePlugin({
     name: "NyxcordTheme",
-    description: "Nyxcord's signature theme. A cosmic, void violet night sky with a nebula glow and an optional starfield.",
+    description: "Nyxcord's signature theme. A cosmic night sky with four moods, a nebula glow, and an optional starfield.",
     authors: [EquicordDevs.Saxx],
     tags: ["Appearance", "Customisation"],
     enabledByDefault: true,
