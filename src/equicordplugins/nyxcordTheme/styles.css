@@ -14,13 +14,13 @@
 .theme-dark,
 .theme-darker,
 .theme-midnight {
-    /* Void violet ramp. Deepest at 0, lifts toward 4. */
-    --nyx-bg-0: hsl(258deg 34% 4%);
-    --nyx-bg-1: hsl(258deg 30% 6%);
-    --nyx-bg-2: hsl(257deg 27% 9%);
-    --nyx-bg-3: hsl(256deg 24% 12%);
-    --nyx-bg-4: hsl(255deg 22% 16%);
-    --nyx-line: hsl(255deg 20% 20%);
+    /* Background ramp, tinted by the active mood (--nyx-bg-h/s). Deepest at 0, lifts toward 4. */
+    --nyx-bg-0: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) + 4%) 4%);
+    --nyx-bg-1: hsl(var(--nyx-bg-h, 258) var(--nyx-bg-s, 30%) 6%);
+    --nyx-bg-2: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 3%) 9%);
+    --nyx-bg-3: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 6%) 12%);
+    --nyx-bg-4: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 8%) 16%);
+    --nyx-line: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 10%) 20%);
     --nyx-accent: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) var(--nyx-accent-l, 63%));
     --nyx-accent-soft: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) 56%);
     --nyx-accent-deep: hsl(var(--nyx-accent-h, 270) calc(var(--nyx-accent-s, 85%) - 20%) 22%);
