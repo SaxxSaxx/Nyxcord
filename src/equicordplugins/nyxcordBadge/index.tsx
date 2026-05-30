@@ -14,13 +14,26 @@ import { BRAND_REPO_NAME, BRAND_REPO_OWNER, BRAND_REPO_URL } from "../../nyxcord
 
 const BADGES_URL = `https://raw.githubusercontent.com/${BRAND_REPO_OWNER}/${BRAND_REPO_NAME}/main/badges.json`;
 
-// A violet cosmic sparkle, inline so the badge needs no extra host.
-const NYX_ICON = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23a855f7' d='M12 2C13 8 16 11 22 12C16 13 13 16 12 22C11 16 8 13 2 12C8 11 11 8 12 2Z'/></svg>";
+const DEFAULT_COLOR = "#a855f7";
+
+// A cosmic sparkle, inline so the badge needs no extra host. Tinted per tier.
+function nyxIcon(color: string) {
+    return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='${encodeURIComponent(color)}' d='M12 2C13 8 16 11 22 12C16 13 13 16 12 22C11 16 8 13 2 12C8 11 11 8 12 2Z'/></svg>`;
+}
+
+// A list entry is either a plain tooltip string or a tier with its own color.
+type BadgeEntry = string | { tooltip?: string; color?: string; };
 
 const logger = new Logger("NyxcordBadge");
 
-let badgeUsers: Record<string, string> = {};
+let badgeUsers: Record<string, BadgeEntry> = {};
 let intervalId: ReturnType<typeof setInterval> | undefined;
+
+function resolveEntry(userId: string) {
+    const entry = badgeUsers[userId];
+    if (typeof entry === "string") return { tooltip: entry || "Nyxcord user", color: DEFAULT_COLOR };
+    return { tooltip: entry?.tooltip || "Nyxcord user", color: entry?.color || DEFAULT_COLOR };
+}
 
 async function loadBadges(noCache = false) {
     try {
@@ -34,19 +47,22 @@ async function loadBadges(noCache = false) {
 const NyxcordBadge: ProfileBadge = {
     id: "nyxcord_user_badge",
     shouldShow: ({ userId }) => userId in badgeUsers,
-    getBadges: ({ userId }) => [{
-        id: "nyxcord_user_badge",
-        description: badgeUsers[userId] || "Nyxcord user",
-        iconSrc: NYX_ICON,
-        position: BadgePosition.START,
-        link: BRAND_REPO_URL,
-        props: {
-            style: {
-                borderRadius: "50%",
-                transform: "scale(0.9)"
+    getBadges: ({ userId }) => {
+        const { tooltip, color } = resolveEntry(userId);
+        return [{
+            id: "nyxcord_user_badge",
+            description: tooltip,
+            iconSrc: nyxIcon(color),
+            position: BadgePosition.START,
+            link: BRAND_REPO_URL,
+            props: {
+                style: {
+                    borderRadius: "50%",
+                    transform: "scale(0.9)"
+                }
             }
-        }
-    }]
+        }];
+    }
 };
 
 export default definePlugin({
