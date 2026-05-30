@@ -33,17 +33,20 @@ async function loadBadges(noCache = false) {
 
 const NyxcordBadge: ProfileBadge = {
     id: "nyxcord_user_badge",
-    description: "Nyxcord user",
-    iconSrc: NYX_ICON,
-    position: BadgePosition.START,
-    link: BRAND_REPO_URL,
     shouldShow: ({ userId }) => userId in badgeUsers,
-    props: {
-        style: {
-            borderRadius: "50%",
-            transform: "scale(0.9)"
+    getBadges: ({ userId }) => [{
+        id: "nyxcord_user_badge",
+        description: badgeUsers[userId] || "Nyxcord user",
+        iconSrc: NYX_ICON,
+        position: BadgePosition.START,
+        link: BRAND_REPO_URL,
+        props: {
+            style: {
+                borderRadius: "50%",
+                transform: "scale(0.9)"
+            }
         }
-    }
+    }]
 };
 
 export default definePlugin({
