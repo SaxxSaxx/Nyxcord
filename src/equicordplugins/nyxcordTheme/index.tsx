@@ -29,7 +29,15 @@ const VARIANTS: Record<string, Variant> = {
     // Austere near-mono indigo. Quiet, low glow, no stars.
     eclipse: { accentHue: 250, glow: 20, starfield: false, bgHue: 245, bgSat: 16 },
     // Magenta nebula. Vibrant, high glow.
-    nebula: { accentHue: 305, glow: 70, starfield: true, bgHue: 268, bgSat: 34 }
+    nebula: { accentHue: 305, glow: 70, starfield: true, bgHue: 268, bgSat: 34 },
+    // Deep blue night. Classic, calm.
+    midnight: { accentHue: 222, glow: 40, starfield: true, bgHue: 222, bgSat: 38 },
+    // Rose dusk. Soft pink over a plum base.
+    rose: { accentHue: 335, glow: 55, starfield: true, bgHue: 320, bgSat: 26 },
+    // Warm ember. Amber over a cocoa base, no stars.
+    ember: { accentHue: 25, glow: 50, starfield: false, bgHue: 20, bgSat: 24 },
+    // Minimalist mono. Near-grayscale, faint accent, quiet.
+    mono: { accentHue: 250, glow: 10, starfield: false, bgHue: 240, bgSat: 6 }
 };
 
 function applyVars() {
@@ -68,7 +76,11 @@ const settings = definePluginSettings({
             { label: "Nyx — void violet", value: "nyx", default: true },
             { label: "Aurora — teal shimmer", value: "aurora" },
             { label: "Eclipse — austere indigo", value: "eclipse" },
-            { label: "Nebula — magenta", value: "nebula" }
+            { label: "Nebula — magenta", value: "nebula" },
+            { label: "Midnight — deep blue", value: "midnight" },
+            { label: "Rose — pink dusk", value: "rose" },
+            { label: "Ember — warm amber", value: "ember" },
+            { label: "Mono — minimalist", value: "mono" }
         ],
         onChange: applyVariant
     },
