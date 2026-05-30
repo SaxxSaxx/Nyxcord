@@ -13,7 +13,9 @@
  */
 
 :root {
-    /* Background mood. Nyx=258/30%, Aurora=205/32%, Eclipse=245/16%, Nebula=268/34%. */
+    /* Background mood (hue / saturation). Built-in moods:
+       Nyx 258/30%, Aurora 205/32%, Eclipse 245/16%, Nebula 268/34%,
+       Midnight 222/38%, Rose 320/26%, Ember 20/24%, Mono 240/6%. */
     --nyx-bg-h: 258;
     --nyx-bg-s: 30%;
 
