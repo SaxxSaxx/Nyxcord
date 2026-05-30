@@ -6,6 +6,7 @@ What you get over vanilla Discord:
 
 - **Signature look (Nyx)** — a cosmic night sky theme with four moods (Nyx, Aurora, Eclipse, Nebula), a nebula glow, and an optional starfield, on by default. Where the popular Nightcord theme goes melancholic and underwater, Nyx goes regal and celestial, after Nyxcord's namesake (Nyx, the Greek primordial goddess of night).
 - **Nyxcord badge** — a profile badge for Nyxcord users, so the community is visible at a glance.
+- **AI catch-up** — `/catchup` summarizes what you missed in a channel. Bring your own Anthropic or OpenAI key, so it stays free.
 - **Privacy by default** — analytics + Sentry blocked (NoTrack), typing indicator hidden (SilentTyping), crash recovery enabled.
 - **Message history** — see deleted and edited messages.
 - **QoL preset on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
