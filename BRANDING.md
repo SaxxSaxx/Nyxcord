@@ -31,7 +31,11 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
   - BannersEverywhere (banner shown in more UI surfaces)
 
   Signature theme (v0.2.0):
-  - NyxcordTheme (void violet night-sky theme, nebula glow, starfield; settings: accent hue, glow, starfield)
+  - NyxcordTheme (night-sky theme, nebula glow, starfield; v0.3.0 adds 4 moods: Nyx/Aurora/Eclipse/Nebula)
+
+  Brand + growth (v0.3.0):
+  - NyxcordBadge (profile badge for Nyxcord users, list curated in repo badges.json)
+  - NyxcordWelcome (one-time first-run welcome modal)
 
 ## Roadmap
 
@@ -45,3 +49,4 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.1.1 shipped: 2026-05-25 (updater e2e bump)
 - v0.1.2 shipped: 2026-05-25 (Identity bundle, Path A)
 - v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
+- v0.3.0 (in progress): theme moods + NyxcordBadge + NyxcordWelcome (brand + growth bundle)

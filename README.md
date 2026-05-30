@@ -4,7 +4,8 @@ A personal-brand Discord client mod, forked from [Equicord](https://github.com/E
 
 What you get over vanilla Discord:
 
-- **Signature look (Nyx)** — a cosmic, void violet night sky theme with a nebula glow and an optional starfield, on by default. Where the popular Nightcord theme goes melancholic and underwater, Nyx goes regal and celestial, after Nyxcord's namesake (Nyx, the Greek primordial goddess of night).
+- **Signature look (Nyx)** — a cosmic night sky theme with four moods (Nyx, Aurora, Eclipse, Nebula), a nebula glow, and an optional starfield, on by default. Where the popular Nightcord theme goes melancholic and underwater, Nyx goes regal and celestial, after Nyxcord's namesake (Nyx, the Greek primordial goddess of night).
+- **Nyxcord badge** — a profile badge for Nyxcord users, so the community is visible at a glance.
 - **Privacy by default** — analytics + Sentry blocked (NoTrack), typing indicator hidden (SilentTyping), crash recovery enabled.
 - **Message history** — see deleted and edited messages.
 - **QoL preset on** — FakeNitro, ShowHiddenChannels, BetterFolders, CustomRPC.
@@ -24,9 +25,10 @@ Custom **username** sync isn't here yet (no open-ecosystem plugin does it). It's
 
 ## Signature look (Nyx)
 
-The **NyxcordTheme** plugin is on by default and gives Nyxcord its face: a void violet base, a nebula glow on links, mentions, the selected channel and primary buttons, and a faint starfield behind the app.
+The **NyxcordTheme** plugin is on by default and gives Nyxcord its face: a night-sky base, a nebula glow on links, mentions, the selected channel and primary buttons, and a faint starfield behind the app.
 
-- Tune it under Settings → **Nyxcord** → Plugins → **NyxcordTheme**: accent hue, glow strength, starfield on/off.
+- Pick a **mood**: Nyx (void violet), Aurora (teal shimmer), Eclipse (austere indigo), Nebula (magenta).
+- Tune it under Settings → **Nyxcord** → Plugins → **NyxcordTheme**: mood, accent hue, glow strength, starfield on/off.
 - Toggle the plugin off for plain Equicord styling.
 - Power users can fork the standalone [`misc/Nyx.theme.css`](misc/Nyx.theme.css) and load it as a normal theme.
 
