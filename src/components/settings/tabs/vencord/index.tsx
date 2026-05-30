@@ -283,7 +283,7 @@ function EquicordSettings() {
     );
 }
 
-export default wrapTab(EquicordSettings, "Nyxcord Settings — v0.3.1");
+export default wrapTab(EquicordSettings, "Nyxcord Settings — v0.4.0");
 
 export function isEquicordDonor(userId: string): boolean {
     const donorBadges = BadgeAPI.getEquicordDonorBadges(userId);
