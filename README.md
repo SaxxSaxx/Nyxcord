@@ -1,5 +1,7 @@
 # Nyxcord
 
+**[nyxcord website →](https://saxxsaxx.github.io/Nyxcord/)**
+
 A personal-brand Discord client mod, forked from [Equicord](https://github.com/Equicord/Equicord) (itself a fork of [Vencord](https://github.com/Vendicated/Vencord)).
 
 What you get over vanilla Discord:
