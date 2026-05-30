@@ -50,4 +50,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.1.2 shipped: 2026-05-25 (Identity bundle, Path A)
 - v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
 - v0.3.0 shipped: 2026-05-30 (theme moods + NyxcordBadge + NyxcordWelcome)
-- v0.3.1 (in progress): 8 built-in theme moods + tiered badges (Founder/Early Supporter)
+- v0.3.1 shipped: 2026-05-30 (8 built-in theme moods + tiered badges)
+- v0.4.0 (in progress): NyxcordCatchUp (AI /catchup, bring-your-own-key, free)
