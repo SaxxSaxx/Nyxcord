@@ -2,6 +2,8 @@
 
 **[nyxcord website →](https://saxxsaxx.github.io/Nyxcord/)**
 
+![Nyxcord theme moods](https://saxxsaxx.github.io/Nyxcord/nyxcord-moods.gif)
+
 A personal-brand Discord client mod, forked from [Equicord](https://github.com/Equicord/Equicord) (itself a fork of [Vencord](https://github.com/Vendicated/Vencord)).
 
 What you get over vanilla Discord:
