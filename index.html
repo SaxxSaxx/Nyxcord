@@ -375,13 +375,18 @@
     document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
     if (el) el.classList.add("active");
   }
+  let idx = 0, auto = null;
+  function go(i) { idx = i; applyMood(MOODS[i], document.querySelectorAll(".chip")[i]); }
   MOODS.forEach((m, i) => {
     const c = document.createElement("button");
     c.className = "chip" + (i === 0 ? " active" : "");
     c.innerHTML = `<span class="dot" style="background:${m.swatch}"></span>${m.name}`;
-    c.onclick = () => applyMood(m, c);
+    c.onclick = () => { if (auto) { clearInterval(auto); auto = null; } go(i); };
     chips.appendChild(c);
   });
+  // Auto-cycle the moods until the visitor takes over (unless they prefer reduced motion).
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+    auto = setInterval(() => go((idx + 1) % MOODS.length), 2800);
 
   // copy buttons
   document.querySelectorAll(".copy").forEach(b => b.onclick = () => {
