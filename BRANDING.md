@@ -58,4 +58,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.3.1 shipped: 2026-05-30 (8 built-in theme moods + tiered badges)
 - v0.4.0 shipped: 2026-05-30 (NyxcordCatchUp — AI /catchup, bring-your-own-key, free)
 - v0.4.1 shipped: 2026-06-03 (softer twinkling starfield + theme surface coverage + 8 QoL preset plugins)
-- v0.5.0 (in progress): Nyx theme moved to the Themes tab as 8 hosted mood themes (no longer a plugin)
+- v0.5.0 shipped: 2026-06-03 (Nyx theme moved to the Themes tab as 8 hosted mood themes)
+- v0.6.0 (in progress): Presets tab (one-click Privacy/Persona/QoL/Streamer bundles) + first-launch welcome surfaces it
