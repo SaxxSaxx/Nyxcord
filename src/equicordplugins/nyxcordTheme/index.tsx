@@ -110,7 +110,7 @@ const settings = definePluginSettings({
 
 export default definePlugin({
     name: "NyxcordTheme",
-    description: "Nyxcord's signature theme. A cosmic night sky with four moods, a nebula glow, and an optional starfield.",
+    description: "Nyxcord's signature theme. A cosmic night sky with eight moods, a nebula glow, and an optional starfield.",
     authors: [EquicordDevs.Saxx],
     tags: ["Appearance", "Customisation"],
     enabledByDefault: true,
