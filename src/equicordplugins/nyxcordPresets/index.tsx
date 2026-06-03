@@ -18,14 +18,14 @@ import { Alerts } from "@webpack/common";
 
 const cl = classNameFactory("vc-nyxpresets-");
 
-interface Preset {
+export interface Preset {
     id: string;
     name: string;
     description: string;
     plugins: string[];
 }
 
-const PRESETS: Preset[] = [
+export const PRESETS: Preset[] = [
     {
         id: "privacy",
         name: "Privacy",
