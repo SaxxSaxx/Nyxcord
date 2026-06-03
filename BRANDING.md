@@ -60,4 +60,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.4.1 shipped: 2026-06-03 (softer twinkling starfield + theme surface coverage + 8 QoL preset plugins)
 - v0.5.0 shipped: 2026-06-03 (Nyx theme moved to the Themes tab as 8 hosted mood themes)
 - v0.6.0 shipped: 2026-06-03 (Presets tab + welcome integration)
-- v0.7.0 (in progress): Nyx Deep theme — transformative translucent-panels-over-animated-nebula look, added as a 9th mood in the Themes tab
+- v0.7.0 shipped: 2026-06-03 (Nyx Deep transformative theme)
+- v0.8.0 (in progress): Nyxcord command suite — /nyx-mood (instant live theme switch incl. random) + /nyx-preset (apply a vibe from chat)
