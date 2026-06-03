@@ -27,7 +27,7 @@ function WelcomeModal({ modalProps }: { modalProps: RenderModalProps; }) {
                 Nyxcord is Discord with a face of its own. Here is what is already on.
             </Paragraph>
             <Paragraph className={Margins.bottom8}>
-                <strong>Signature theme.</strong> The Nyx night sky is enabled by default, with four moods: Nyx, Aurora, Eclipse, and Nebula. Change the mood, accent, glow, and starfield under Settings, then Nyxcord, then Plugins, then NyxcordTheme.
+                <strong>Signature theme.</strong> The Nyx night sky is enabled by default, with eight moods, from void violet Nyx to minimalist Mono. Change the mood, accent, glow, and starfield under Settings, then Nyxcord, then Plugins, then NyxcordTheme.
             </Paragraph>
             <Paragraph className={Margins.bottom8}>
                 <strong>Private by default.</strong> Analytics and Sentry are blocked, your typing indicator is hidden, and deleted messages stay visible.
