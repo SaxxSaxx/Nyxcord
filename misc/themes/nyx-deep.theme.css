@@ -1,0 +1,168 @@
+/**
+ * @name Nyx · Deep
+ * @author Saxx
+ * @description The transformative Nyx look: translucent panels floating over a slow animated nebula, with amplified glow and a starfield. Heavier than the flat moods. Enable one Nyx mood at a time.
+ * @version 1.0.0
+ * @source https://github.com/SaxxSaxx/Nyxcord
+ */
+
+:root {
+    --nyx-bg-h: 258;
+    --nyx-bg-s: 30%;
+    --nyx-accent-h: 270;
+    --nyx-accent-s: 85%;
+    --nyx-accent-l: 63%;
+    --nyx-glow: 0.7;
+    --nyx-star-opacity: 1;
+}
+
+.theme-dark,
+.theme-darker,
+.theme-midnight {
+    --nyx-accent: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) var(--nyx-accent-l, 63%));
+    --nyx-accent-soft: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) 58%);
+    --nyx-accent-deep: hsl(var(--nyx-accent-h, 270) calc(var(--nyx-accent-s, 85%) - 20%) 24%);
+    --nyx-line: hsl(var(--nyx-bg-h, 258) 22% 24% / 50%);
+
+    /* Translucent panel ramp, so the nebula behind shows through. Kept dark and
+       fairly opaque so text stays readable. */
+    --nyx-bg-0: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) + 4%) 5% / 70%);
+    --nyx-bg-1: hsl(var(--nyx-bg-h, 258) var(--nyx-bg-s, 30%) 7% / 80%);
+    --nyx-bg-2: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 3%) 9% / 76%);
+    --nyx-bg-3: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 6%) 12% / 82%);
+    --nyx-bg-4: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 8%) 16% / 85%);
+    --background-primary: var(--nyx-bg-2);
+    --background-secondary: var(--nyx-bg-1);
+    --background-secondary-alt: var(--nyx-bg-1);
+    --background-tertiary: var(--nyx-bg-0);
+    --background-accent: var(--nyx-accent);
+    --background-nested-floating: var(--nyx-bg-1);
+    --background-mobile-primary: var(--nyx-bg-2);
+    --background-mobile-secondary: var(--nyx-bg-1);
+    --channeltextarea-background: hsl(var(--nyx-bg-h, 258) 24% 11% / 86%);
+    --background-modifier-hover: hsl(var(--nyx-accent-h, 270) 35% 55% / 10%);
+    --background-modifier-active: hsl(var(--nyx-accent-h, 270) 45% 55% / 16%);
+    --background-modifier-selected: hsl(var(--nyx-accent-h, 270) 50% 55% / 20%);
+    --background-modifier-accent: var(--nyx-line);
+    --bg-base-lowest: var(--nyx-bg-0);
+    --bg-base-lower: var(--nyx-bg-0);
+    --bg-base-low: var(--nyx-bg-1);
+    --bg-base-secondary: var(--nyx-bg-1);
+    --bg-base-tertiary: var(--nyx-bg-2);
+    --bg-surface-raised: var(--nyx-bg-2);
+    --bg-surface-higher: var(--nyx-bg-3);
+    --bg-surface-highest: var(--nyx-bg-4);
+
+    /* Popouts and modals stay nearly opaque so they're readable over content. */
+    --background-floating: hsl(var(--nyx-bg-h, 258) 28% 6% / 96%);
+    --bg-surface-overlay: hsl(var(--nyx-bg-h, 258) 28% 6% / 96%);
+    --bg-surface-overlay-tmp: hsl(var(--nyx-bg-h, 258) 28% 6% / 96%);
+    --modal-background: hsl(var(--nyx-bg-h, 258) 28% 7% / 97%);
+    --bg-mod-faint: hsl(var(--nyx-accent-h, 270) 30% 50% / 8%);
+    --bg-mod-subtle: hsl(var(--nyx-accent-h, 270) 35% 50% / 12%);
+    --bg-mod-strong: hsl(var(--nyx-accent-h, 270) 40% 50% / 18%);
+    --bg-mod-stronger: hsl(var(--nyx-accent-h, 270) 45% 50% / 24%);
+    --brand-experiment: var(--nyx-accent);
+    --brand-experiment-560: var(--nyx-accent-deep);
+    --brand-experiment-600: var(--nyx-accent-deep);
+    --brand-260: var(--nyx-accent-deep);
+    --brand-360: var(--nyx-accent-soft);
+    --brand-400: var(--nyx-accent-soft);
+    --brand-460: var(--nyx-accent);
+    --brand-500: var(--nyx-accent);
+    --brand-530: var(--nyx-accent);
+    --brand-560: var(--nyx-accent-deep);
+    --brand-600: var(--nyx-accent-deep);
+    --button-filled-brand-background: var(--nyx-accent);
+    --button-filled-brand-background-hover: var(--nyx-accent-soft);
+    --mention-foreground: white;
+    --mention-background: hsl(var(--nyx-accent-h, 270) 60% 50% / 30%);
+    --background-mentioned: hsl(var(--nyx-accent-h, 270) 60% 50% / 12%);
+    --background-mentioned-hover: hsl(var(--nyx-accent-h, 270) 60% 50% / 18%);
+    --text-normal: hsl(250deg 20% 92%);
+    --text-default: hsl(250deg 20% 92%);
+    --text-muted: hsl(250deg 12% 60%);
+    --text-link: var(--nyx-accent-soft);
+    --header-primary: hsl(250deg 24% 97%);
+    --header-secondary: hsl(250deg 14% 68%);
+    --interactive-normal: hsl(250deg 12% 74%);
+    --interactive-hover: hsl(250deg 16% 90%);
+    --interactive-active: white;
+    --white-500: hsl(250deg 24% 97%);
+    --scrollbar-thin-thumb: var(--nyx-accent-deep);
+    --scrollbar-auto-thumb: var(--nyx-accent-deep);
+    --scrollbar-auto-track: transparent;
+    --focus-primary: var(--nyx-accent);
+}
+
+/* Solid void base behind the nebula. */
+#app-mount {
+    background-color: hsl(var(--nyx-bg-h, 258) 34% 4%);
+}
+
+/* The nebula. Sits behind the UI (z-index -1) and bleeds through the translucent
+   panels. Slowly drifts. Oversized so the drift never reveals an edge. */
+#app-mount::before {
+    content: "";
+    position: fixed;
+    inset: -25%;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(45px);
+    background:
+        radial-gradient(38% 48% at 20% 25%, hsl(var(--nyx-accent-h, 270) 72% 42% / 70%), transparent 70%),
+        radial-gradient(44% 52% at 80% 28%, hsl(calc(var(--nyx-accent-h, 270) - 45) 72% 38% / 62%), transparent 70%),
+        radial-gradient(50% 50% at 62% 82%, hsl(calc(var(--nyx-accent-h, 270) + 35) 68% 36% / 58%), transparent 72%),
+        radial-gradient(40% 46% at 32% 78%, hsl(var(--nyx-accent-h, 270) 64% 34% / 55%), transparent 72%);
+    animation: nyx-nebula 42s ease-in-out infinite alternate;
+}
+
+@keyframes nyx-nebula {
+    0% { transform: translate3d(-3%, -2%, 0) scale(1.05); }
+    100% { transform: translate3d(3%, 2%, 0) scale(1.16); }
+}
+
+/* Amplified glow on accent text. */
+#app-mount a {
+    text-shadow: 0 0 calc(10px * var(--nyx-glow, 0.7)) hsl(var(--nyx-accent-h, 270) 90% 66% / var(--nyx-glow, 0.7));
+}
+
+#app-mount ::selection {
+    background: hsl(var(--nyx-accent-h, 270) 70% 55% / 45%);
+    text-shadow: none;
+}
+
+/* Starfield, screen-blended over everything. */
+#app-mount::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    background-repeat: repeat;
+    background-image:
+        radial-gradient(2px 2px at 12% 22%, hsl(250deg 60% 92% / 90%), transparent 70%),
+        radial-gradient(1.5px 1.5px at 78% 14%, hsl(250deg 50% 90% / 75%), transparent 70%),
+        radial-gradient(2.5px 2.5px at 33% 67%, hsl(var(--nyx-accent-h, 270) 70% 70% / 80%), transparent 72%),
+        radial-gradient(1.5px 1.5px at 64% 51%, hsl(250deg 50% 90% / 70%), transparent 70%),
+        radial-gradient(2px 2px at 90% 80%, hsl(250deg 55% 92% / 80%), transparent 70%),
+        radial-gradient(2.5px 2.5px at 47% 89%, hsl(var(--nyx-accent-h, 270) 70% 70% / 70%), transparent 72%),
+        radial-gradient(1.5px 1.5px at 20% 93%, hsl(250deg 50% 90% / 65%), transparent 70%);
+    background-size: 560px 560px, 660px 660px, 780px 780px, 520px 520px, 700px 700px, 840px 840px, 600px 600px;
+    animation: nyx-twinkle 6s ease-in-out infinite;
+}
+
+@keyframes nyx-twinkle {
+    0%, 100% { opacity: calc(0.32 * var(--nyx-star-opacity, 1)); }
+    50% { opacity: calc(0.58 * var(--nyx-star-opacity, 1)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #app-mount::before { animation: none; }
+
+    #app-mount::after {
+        animation: none;
+        opacity: calc(0.42 * var(--nyx-star-opacity, 1));
+    }
+}
