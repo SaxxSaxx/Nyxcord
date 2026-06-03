@@ -30,8 +30,13 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
   - MentionAvatars (avatars next to @mentions)
   - BannersEverywhere (banner shown in more UI surfaces)
 
+  QoL loadout (v0.4.1):
+  - PlatformIndicators, TypingTweaks, ImageZoom, ViewIcons, ReverseImageSearch, PinDMs, ReadAllNotificationsButton, MoreUserTags
+  - (enabledByDefault only affects fresh installs; existing users keep their own toggles)
+
   Signature theme (v0.2.0):
   - NyxcordTheme (night-sky theme, nebula glow, starfield; v0.3.0 adds 4 moods: Nyx/Aurora/Eclipse/Nebula)
+  - v0.4.1: softened the starfield (soft, twinkling, no "dead pixel" look) + covers inputs/cards/modals/mentions
 
   Brand + growth (v0.3.0):
   - NyxcordBadge (profile badge for Nyxcord users, list curated in repo badges.json)
@@ -51,4 +56,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
 - v0.3.0 shipped: 2026-05-30 (theme moods + NyxcordBadge + NyxcordWelcome)
 - v0.3.1 shipped: 2026-05-30 (8 built-in theme moods + tiered badges)
-- v0.4.0 (in progress): NyxcordCatchUp (AI /catchup, bring-your-own-key, free)
+- v0.4.0 shipped: 2026-05-30 (NyxcordCatchUp — AI /catchup, bring-your-own-key, free)
+- v0.4.1 (in progress): softer twinkling starfield + theme surface coverage + 8 QoL preset plugins on by default
