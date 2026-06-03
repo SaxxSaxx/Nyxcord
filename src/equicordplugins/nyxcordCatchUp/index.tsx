@@ -9,7 +9,7 @@ import { definePluginSettings } from "@api/Settings";
 import { EquicordDevs } from "@utils/constants";
 import definePlugin, { makeRange, OptionType, PluginNative } from "@utils/types";
 import type { Message } from "@vencord/discord-types";
-import { MessageStore } from "@webpack/common";
+import { MessageStore, ReadStateStore } from "@webpack/common";
 
 const Native = VencordNative.pluginHelpers.NyxcordCatchUp as PluginNative<typeof import("./native")>;
 
@@ -34,17 +34,16 @@ const settings = definePluginSettings({
     },
     messageCount: {
         type: OptionType.SLIDER,
-        description: "How many recent messages to read when catching up.",
+        description: "Most unread messages to read when catching up. Older ones beyond this are skipped.",
         markers: makeRange(20, 200, 20),
         default: 60,
         stickToMarkers: true
     }
 });
 
-function buildTranscript(channelId: string, count: number): string {
-    const messages: Message[] = MessageStore.getMessages(channelId)?._array ?? [];
+function formatTranscript(messages: Message[]): string {
     const lines: string[] = [];
-    for (const m of messages.slice(-count)) {
+    for (const m of messages) {
         const author = m?.author?.username;
         const content = m?.content?.trim();
         if (author && content) lines.push(`${author}: ${content}`);
@@ -61,26 +60,48 @@ export default definePlugin({
     commands: [
         {
             name: "catchup",
-            description: "Summarize the recent messages in this channel.",
+            description: "Summarize what you missed in this channel since you last read it.",
             options: [
                 {
                     name: "count",
-                    description: "How many recent messages to read (optional).",
+                    description: "Summarize the last N messages instead of just the unread ones.",
                     type: ApplicationCommandOptionType.INTEGER,
                     required: false
                 }
             ],
             execute: async (args, ctx) => {
                 const channelId = ctx.channel.id;
-                const count = findOption(args, "count", settings.store.messageCount);
-                const transcript = buildTranscript(channelId, count);
+                const explicitCount = findOption<number>(args, "count");
+                const all: Message[] = MessageStore.getMessages(channelId)?._array ?? [];
 
+                let slice: Message[];
+                let truncated = false;
+                if (explicitCount === undefined) {
+                    const oldestUnread = ReadStateStore.getOldestUnreadMessageId(channelId);
+                    const start = oldestUnread ? all.findIndex(m => m?.id === oldestUnread) : -1;
+                    if (start < 0) {
+                        sendBotMessage(channelId, { content: "You're all caught up here, nothing new to summarize." });
+                        return;
+                    }
+                    const cap = settings.store.messageCount;
+                    const unread = all.slice(start);
+                    truncated = unread.length > cap;
+                    slice = unread.slice(-cap);
+                } else {
+                    slice = all.slice(-explicitCount);
+                }
+
+                const transcript = formatTranscript(slice);
                 if (!transcript) {
                     sendBotMessage(channelId, { content: "There's nothing recent to catch up on here." });
                     return;
                 }
 
-                sendBotMessage(channelId, { content: "Catching you up…" });
+                sendBotMessage(channelId, {
+                    content: truncated
+                        ? `Catching you up on the most recent ${settings.store.messageCount} unread messages…`
+                        : "Catching you up…"
+                });
 
                 const prompt =
                     "You are catching someone up on a Discord channel they haven't read. " +
