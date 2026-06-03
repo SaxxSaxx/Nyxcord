@@ -1,20 +1,39 @@
-/*
- * Vencord, a Discord client mod
- * Copyright (c) 2026 Vendicated and contributors
- * SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @name Nyx · Mono
+ * @author Saxx
+ * @description Minimalist near-grayscale, quiet. A Nyxcord night-sky mood. Enable one Nyx mood at a time.
+ * @version 1.0.0
+ * @source https://github.com/SaxxSaxx/Nyxcord
  */
 
 /*
- * Nyx — Nyxcord's signature theme.
- * Variable driven so it survives Discord updates: we recolor Discord's own
- * theming custom properties rather than hooking mangled class names. The few
- * element rules below use stable selectors only (#app-mount, a, ::selection).
+ * Drop this in your Vencord/Equicord themes folder, or import the raw URL as an
+ * online theme. The knobs below mirror the plugin's settings. Nyxcord users get
+ * this look out of the box via the NyxcordTheme plugin and do not need this file.
  */
+
+:root {
+    /* Background mood (hue / saturation). Built-in moods:
+       Nyx 258/30%, Aurora 205/32%, Eclipse 245/16%, Nebula 268/34%,
+       Midnight 222/38%, Rose 320/26%, Ember 20/24%, Mono 240/6%. */
+    --nyx-bg-h: 240;
+    --nyx-bg-s: 6%;
+
+    /* Accent hue. 270 is Nyx violet. 240 leans indigo, 300 leans magenta. */
+    --nyx-accent-h: 250;
+    --nyx-accent-s: 85%;
+    --nyx-accent-l: 63%;
+
+    /* Nebula glow strength, 0 to 1. */
+    --nyx-glow: 0.1;
+
+    /* Starfield, 1 on or 0 off. */
+    --nyx-star-opacity: 0;
+}
 
 .theme-dark,
 .theme-darker,
 .theme-midnight {
-    /* Background ramp, tinted by the active mood (--nyx-bg-h/s). Deepest at 0, lifts toward 4. */
     --nyx-bg-0: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) + 4%) 4%);
     --nyx-bg-1: hsl(var(--nyx-bg-h, 258) var(--nyx-bg-s, 30%) 6%);
     --nyx-bg-2: hsl(var(--nyx-bg-h, 258) calc(var(--nyx-bg-s, 30%) - 3%) 9%);
@@ -24,8 +43,6 @@
     --nyx-accent: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) var(--nyx-accent-l, 63%));
     --nyx-accent-soft: hsl(var(--nyx-accent-h, 270) var(--nyx-accent-s, 85%) 56%);
     --nyx-accent-deep: hsl(var(--nyx-accent-h, 270) calc(var(--nyx-accent-s, 85%) - 20%) 22%);
-
-    /* App chrome backgrounds (legacy variables). */
     --background-primary: var(--nyx-bg-2);
     --background-secondary: var(--nyx-bg-1);
     --background-secondary-alt: var(--nyx-bg-1);
@@ -40,8 +57,6 @@
     --background-modifier-active: hsl(var(--nyx-accent-h, 270) 40% 50% / 14%);
     --background-modifier-selected: hsl(var(--nyx-accent-h, 270) 45% 50% / 18%);
     --background-modifier-accent: var(--nyx-line);
-
-    /* Visual refresh background scale. */
     --bg-base-lowest: var(--nyx-bg-0);
     --bg-base-lower: var(--nyx-bg-0);
     --bg-base-low: var(--nyx-bg-1);
@@ -56,8 +71,6 @@
     --bg-mod-subtle: hsl(var(--nyx-accent-h, 270) 35% 50% / 11%);
     --bg-mod-strong: hsl(var(--nyx-accent-h, 270) 40% 50% / 16%);
     --bg-mod-stronger: hsl(var(--nyx-accent-h, 270) 45% 50% / 22%);
-
-    /* Brand / accent ramp. */
     --brand-experiment: var(--nyx-accent);
     --brand-experiment-560: var(--nyx-accent-deep);
     --brand-experiment-600: var(--nyx-accent-deep);
@@ -73,8 +86,6 @@
     --button-filled-brand-background-hover: var(--nyx-accent-soft);
     --mention-foreground: white;
     --mention-background: hsl(var(--nyx-accent-h, 270) 60% 50% / 28%);
-
-    /* Text. Cool white, slightly violet muted tones. */
     --text-normal: hsl(250deg 18% 90%);
     --text-default: hsl(250deg 18% 90%);
     --text-muted: hsl(250deg 12% 56%);
@@ -85,30 +96,12 @@
     --interactive-hover: hsl(250deg 16% 88%);
     --interactive-active: white;
     --white-500: hsl(250deg 22% 96%);
-
-    /* Accents on rails and rings. */
     --scrollbar-thin-thumb: var(--nyx-accent-deep);
     --scrollbar-auto-thumb: var(--nyx-accent-deep);
     --scrollbar-auto-track: var(--nyx-bg-0);
     --focus-primary: var(--nyx-accent);
-
-    /* Extra surfaces, so nothing falls back to default grey. */
-    --input-background: var(--nyx-bg-3);
-    --deprecated-card-bg: hsl(var(--nyx-accent-h, 270) 18% 50% / 4%);
-    --deprecated-card-editable-bg: var(--nyx-bg-3);
-    --activity-card-background: var(--nyx-bg-3);
-    --modal-background: var(--nyx-bg-1);
-    --modal-footer-background: var(--nyx-bg-2);
-    --input-placeholder-text: hsl(250deg 10% 48%);
-
-    /* Mentions of you glow with the accent instead of Discord's default amber. */
-    --background-mentioned: hsl(var(--nyx-accent-h, 270) 60% 50% / 10%);
-    --background-mentioned-hover: hsl(var(--nyx-accent-h, 270) 60% 50% / 15%);
-    --info-help-background: hsl(var(--nyx-accent-h, 270) 40% 50% / 8%);
-    --info-help-foreground: var(--nyx-accent-soft);
 }
 
-/* Nebula glow on accent text. Strength tracks the glow setting. */
 #app-mount a {
     text-shadow: 0 0 calc(8px * var(--nyx-glow, 0.45)) hsl(var(--nyx-accent-h, 270) 90% 65% / var(--nyx-glow, 0.45));
 }
@@ -118,9 +111,6 @@
     text-shadow: none;
 }
 
-/* Starfield. Soft, sparse, slowly breathing points of light, so it reads as a night
-   sky rather than hard static dots. Each star has a glow falloff (transparent ~70%)
-   and the layer gently twinkles, which keeps it from looking like dead pixels. */
 #app-mount::after {
     content: "";
     position: fixed;

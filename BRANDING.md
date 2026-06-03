@@ -34,9 +34,9 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
   - PlatformIndicators, TypingTweaks, ImageZoom, ViewIcons, ReverseImageSearch, PinDMs, ReadAllNotificationsButton, MoreUserTags
   - (enabledByDefault only affects fresh installs; existing users keep their own toggles)
 
-  Signature theme (v0.2.0):
-  - NyxcordTheme (night-sky theme, nebula glow, starfield; v0.3.0 adds 4 moods: Nyx/Aurora/Eclipse/Nebula)
-  - v0.4.1: softened the starfield (soft, twinkling, no "dead pixel" look) + covers inputs/cards/modals/mentions
+  Signature theme:
+  - v0.2.0–v0.4.1: shipped as the NyxcordTheme plugin (night-sky, nebula glow, twinkling starfield, 8 moods, surface coverage)
+  - v0.5.0: moved OUT of plugins into the Themes tab — 8 hosted "mood" themes (misc/themes/, hosted on gh-pages), installed once by an invisible NyxcordThemes bootstrap (required+hidden). Nyx on by default; pick a mood in Settings → Themes.
 
   Brand + growth (v0.3.0):
   - NyxcordBadge (profile badge for Nyxcord users, list curated in repo badges.json)
@@ -57,4 +57,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.3.0 shipped: 2026-05-30 (theme moods + NyxcordBadge + NyxcordWelcome)
 - v0.3.1 shipped: 2026-05-30 (8 built-in theme moods + tiered badges)
 - v0.4.0 shipped: 2026-05-30 (NyxcordCatchUp — AI /catchup, bring-your-own-key, free)
-- v0.4.1 (in progress): softer twinkling starfield + theme surface coverage + 8 QoL preset plugins on by default
+- v0.4.1 shipped: 2026-06-03 (softer twinkling starfield + theme surface coverage + 8 QoL preset plugins)
+- v0.5.0 (in progress): Nyx theme moved to the Themes tab as 8 hosted mood themes (no longer a plugin)
