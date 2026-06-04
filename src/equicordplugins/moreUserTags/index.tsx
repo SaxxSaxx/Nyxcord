@@ -35,6 +35,7 @@ const genTagTypes = () => {
 migratePluginToSettings(true, "MoreUserTags", "NoAppsAllowed", "noAppsAllowed");
 
 export default definePlugin({
+    enabledByDefault: true,
     name: "MoreUserTags",
     description: "Adds tags for webhooks and moderative roles (owner, admin, etc.)",
     dependencies: ["MemberListDecoratorsAPI", "MessageDecorationsAPI", "NicknameIconsAPI"],

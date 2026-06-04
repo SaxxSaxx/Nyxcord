@@ -30,8 +30,13 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
   - MentionAvatars (avatars next to @mentions)
   - BannersEverywhere (banner shown in more UI surfaces)
 
-  Signature theme (v0.2.0):
-  - NyxcordTheme (night-sky theme, nebula glow, starfield; v0.3.0 adds 4 moods: Nyx/Aurora/Eclipse/Nebula)
+  QoL loadout (v0.4.1):
+  - PlatformIndicators, TypingTweaks, ImageZoom, ViewIcons, ReverseImageSearch, PinDMs, ReadAllNotificationsButton, MoreUserTags
+  - (enabledByDefault only affects fresh installs; existing users keep their own toggles)
+
+  Signature theme:
+  - v0.2.0–v0.4.1: shipped as the NyxcordTheme plugin (night-sky, nebula glow, twinkling starfield, 8 moods, surface coverage)
+  - v0.5.0: moved OUT of plugins into the Themes tab — 8 hosted "mood" themes (misc/themes/, hosted on gh-pages), installed once by an invisible NyxcordThemes bootstrap (required+hidden). Nyx on by default; pick a mood in Settings → Themes.
 
   Brand + growth (v0.3.0):
   - NyxcordBadge (profile badge for Nyxcord users, list curated in repo badges.json)
@@ -51,4 +56,10 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.2.0 shipped: 2026-05-29 (Nyx signature theme, NyxcordTheme on by default)
 - v0.3.0 shipped: 2026-05-30 (theme moods + NyxcordBadge + NyxcordWelcome)
 - v0.3.1 shipped: 2026-05-30 (8 built-in theme moods + tiered badges)
-- v0.4.0 (in progress): NyxcordCatchUp (AI /catchup, bring-your-own-key, free)
+- v0.4.0 shipped: 2026-05-30 (NyxcordCatchUp — AI /catchup, bring-your-own-key, free)
+- v0.4.1 shipped: 2026-06-03 (softer twinkling starfield + theme surface coverage + 8 QoL preset plugins)
+- v0.5.0 shipped: 2026-06-03 (Nyx theme moved to the Themes tab as 8 hosted mood themes)
+- v0.6.0 shipped: 2026-06-03 (Presets tab + welcome integration)
+- v0.7.0 shipped: 2026-06-03 (Nyx Deep transformative theme)
+- v0.8.0 shipped: 2026-06-03 (command suite: /nyx-mood, /nyx-preset)
+- v0.9.0 (in progress): NyxcordSaved — read-it-later (bookmark messages + a Saved tab with jump)

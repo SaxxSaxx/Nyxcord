@@ -1,7 +1,7 @@
 /**
- * @name Nyx
+ * @name Nyx · Midnight
  * @author Saxx
- * @description Nyxcord's signature theme. A cosmic, void violet night sky with a nebula glow and an optional starfield. Standalone version of the built in NyxcordTheme plugin, for power users to fork.
+ * @description Deep blue night, calm. A Nyxcord night-sky mood. Enable one Nyx mood at a time.
  * @version 1.0.0
  * @source https://github.com/SaxxSaxx/Nyxcord
  */
@@ -16,16 +16,16 @@
     /* Background mood (hue / saturation). Built-in moods:
        Nyx 258/30%, Aurora 205/32%, Eclipse 245/16%, Nebula 268/34%,
        Midnight 222/38%, Rose 320/26%, Ember 20/24%, Mono 240/6%. */
-    --nyx-bg-h: 258;
-    --nyx-bg-s: 30%;
+    --nyx-bg-h: 222;
+    --nyx-bg-s: 38%;
 
     /* Accent hue. 270 is Nyx violet. 240 leans indigo, 300 leans magenta. */
-    --nyx-accent-h: 270;
+    --nyx-accent-h: 222;
     --nyx-accent-s: 85%;
     --nyx-accent-l: 63%;
 
     /* Nebula glow strength, 0 to 1. */
-    --nyx-glow: 0.45;
+    --nyx-glow: 0.4;
 
     /* Starfield, 1 on or 0 off. */
     --nyx-star-opacity: 1;
