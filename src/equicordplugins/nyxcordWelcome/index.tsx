@@ -11,7 +11,7 @@ import { Margins } from "@utils/margins";
 import { openModal } from "@utils/modal";
 import definePlugin from "@utils/types";
 import { RenderModalProps } from "@vencord/discord-types";
-import { Modal } from "@webpack/common";
+import { Modal, SettingsRouter } from "@webpack/common";
 
 const SEEN_KEY = "NyxcordWelcome_seen";
 
@@ -21,19 +21,29 @@ function WelcomeModal({ modalProps }: { modalProps: RenderModalProps; }) {
             {...modalProps}
             size="md"
             title="Welcome to Nyxcord"
-            actions={[{ text: "Enter the night", variant: "primary", onClick: modalProps.onClose }]}
+            actions={[
+                {
+                    text: "Pick a preset",
+                    variant: "primary",
+                    onClick: () => {
+                        modalProps.onClose();
+                        SettingsRouter.openUserSettings("nyxcord_presets_panel");
+                    }
+                },
+                { text: "Maybe later", variant: "secondary", onClick: modalProps.onClose }
+            ]}
         >
             <Paragraph className={Margins.bottom16}>
                 Nyxcord is Discord with a face of its own. Here is what is already on.
             </Paragraph>
             <Paragraph className={Margins.bottom8}>
-                <strong>Signature theme.</strong> The Nyx night sky is enabled by default, with eight moods, from void violet Nyx to minimalist Mono. Change the mood, accent, glow, and starfield under Settings, then Nyxcord, then Plugins, then NyxcordTheme.
+                <strong>One-click presets.</strong> Set Nyxcord up for a vibe in a tap, Privacy, Persona, Power QoL, or Streamer, under Settings, then Nyxcord, then Presets. Hit the button below to browse them now.
             </Paragraph>
             <Paragraph className={Margins.bottom8}>
-                <strong>Private by default.</strong> Analytics and Sentry are blocked, your typing indicator is hidden, and deleted messages stay visible.
+                <strong>Signature theme.</strong> The Nyx night sky is on by default, with eight moods. Pick one under Settings, then Themes.
             </Paragraph>
             <Paragraph>
-                <strong>Make it yours.</strong> The full plugin library is one click away in settings. Welcome under the night sky.
+                <strong>Private by default.</strong> Analytics and Sentry are blocked, your typing indicator is hidden, and deleted messages stay visible.
             </Paragraph>
         </Modal>
     );

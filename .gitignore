@@ -35,3 +35,6 @@ ExtensionCache/
 
 # wakatime related stuff
 .wakatime-project
+
+# local agent worktrees/state
+.claude/
