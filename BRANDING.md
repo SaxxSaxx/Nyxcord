@@ -61,4 +61,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.5.0 shipped: 2026-06-03 (Nyx theme moved to the Themes tab as 8 hosted mood themes)
 - v0.6.0 shipped: 2026-06-03 (Presets tab + welcome integration)
 - v0.7.0 shipped: 2026-06-03 (Nyx Deep transformative theme)
-- v0.8.0 (in progress): Nyxcord command suite — /nyx-mood (instant live theme switch incl. random) + /nyx-preset (apply a vibe from chat)
+- v0.8.0 shipped: 2026-06-03 (command suite: /nyx-mood, /nyx-preset)
+- v0.9.0 (in progress): NyxcordSaved — read-it-later (bookmark messages + a Saved tab with jump)
