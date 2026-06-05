@@ -65,4 +65,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.9.0 shipped: 2026-06-04 (read-it-later: NyxcordSaved)
 - v0.10.0 shipped: 2026-06-05 (Theme Studio)
 - v0.11.0 shipped: 2026-06-05 (NyxcordProfile OG badges + own injector)
-- v0.12.0 (in progress): NyxcordName — custom display name on your own profile/popout/account-panel (experimental, client-side, opt-in; mirrors Nightcord's customProfile webpack anchors, no DOM observer)
+- v0.12.0 shipped: 2026-06-05 (NyxcordName custom display name, experimental)
+- v0.13.0 (in progress): NyxcordProfileEditor — unified 'Profile' tab (name + color + badges + Persona setup in one place)

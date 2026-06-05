@@ -10,9 +10,9 @@ import { EquicordDevs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 import { UserStore } from "@webpack/common";
 
-const ICON = (hash: string) => `https://cdn.discordapp.com/badge-icons/${hash}.png`;
+export const ICON = (hash: string) => `https://cdn.discordapp.com/badge-icons/${hash}.png`;
 
-const BADGES = [
+export const BADGES = [
     { key: "staff", name: "Discord Staff", hash: "5e74e9b61934fc1f67c65515d1f7e60d" },
     { key: "partner", name: "Partner", hash: "3f9748e53446a137a052f3454e2de41e" },
     { key: "moderator", name: "Moderator Programs Alumni", hash: "fee1624003e2fee35cb398e125dc479b" },
