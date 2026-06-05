@@ -7,9 +7,6 @@ allowBuilds:
 overrides:
     "@eslint/plugin-kit@<0.3.4": ">=0.3.4"
 
-patchedDependencies:
-    "@types/less@3.0.8": patches/@types__less@3.0.8.patch
-
 peerDependencyRules:
     ignoreMissing:
         - eslint-plugin-import
