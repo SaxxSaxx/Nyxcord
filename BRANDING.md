@@ -63,4 +63,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.7.0 shipped: 2026-06-03 (Nyx Deep transformative theme)
 - v0.8.0 shipped: 2026-06-03 (command suite: /nyx-mood, /nyx-preset)
 - v0.9.0 shipped: 2026-06-04 (read-it-later: NyxcordSaved)
-- v0.10.0 (in progress): Theme Studio — in-app live editor (accent/glow/bg/starfield sliders) that overrides the active mood, persists, brings back the customization lost in v0.5.0
+- v0.10.0 shipped: 2026-06-05 (Theme Studio)
+- v0.11.0 (in progress): NyxcordProfile — wear OG Discord badges (Staff/Partner/HypeSquad/etc.) on your own profile (client-side, like Nightcord's customProfile) + own Nyxcord-branded injector (no more Equicord)
