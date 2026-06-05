@@ -1,0 +1,45 @@
+/*
+ * Vencord, a Discord client mod
+ * Copyright (c) 2026 Vendicated and contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+.vc-nyxpe-root {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.vc-nyxpe-intro {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.vc-nyxpe-section-label {
+    color: var(--header-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.vc-nyxpe-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 18px;
+}
+
+.vc-nyxpe-note {
+    color: var(--text-muted);
+    font-size: 13px;
+    border: 1px solid var(--background-modifier-accent);
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: var(--background-secondary);
+}
+
+.vc-nyxpe-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
