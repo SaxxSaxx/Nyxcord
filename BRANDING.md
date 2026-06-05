@@ -62,4 +62,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.6.0 shipped: 2026-06-03 (Presets tab + welcome integration)
 - v0.7.0 shipped: 2026-06-03 (Nyx Deep transformative theme)
 - v0.8.0 shipped: 2026-06-03 (command suite: /nyx-mood, /nyx-preset)
-- v0.9.0 (in progress): NyxcordSaved — read-it-later (bookmark messages + a Saved tab with jump)
+- v0.9.0 shipped: 2026-06-04 (read-it-later: NyxcordSaved)
+- v0.10.0 (in progress): Theme Studio — in-app live editor (accent/glow/bg/starfield sliders) that overrides the active mood, persists, brings back the customization lost in v0.5.0
