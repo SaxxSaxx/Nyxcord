@@ -7,11 +7,6 @@ settings:
 overrides:
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
 
-patchedDependencies:
-  '@types/less@3.0.8':
-    hash: 641e6c93bb737bac7fc283416857bd095cd85bcbcba63becb7a8bbcc78f73076
-    path: patches/@types__less@3.0.8.patch
-
 importers:
 
   .:
@@ -33,7 +28,7 @@ importers:
         version: 0.0.22
       '@types/less':
         specifier: ^3.0.8
-        version: 3.0.8(patch_hash=641e6c93bb737bac7fc283416857bd095cd85bcbcba63becb7a8bbcc78f73076)
+        version: 3.0.8
       '@types/stylus':
         specifier: ^0.48.42
         version: 0.48.42
@@ -1770,7 +1765,7 @@ packages:
     engines: {node: '>= 14'}
 
   gifenc@https://codeload.github.com/mattdesl/gifenc/tar.gz/64842fca317b112a8590f8fef2bf3825da8f6fe3:
-    resolution: {tarball: https://codeload.github.com/mattdesl/gifenc/tar.gz/64842fca317b112a8590f8fef2bf3825da8f6fe3}
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/mattdesl/gifenc/tar.gz/64842fca317b112a8590f8fef2bf3825da8f6fe3}
     version: 1.0.3
 
   glob-parent@5.1.2:
@@ -3383,7 +3378,7 @@ snapshots:
     dependencies:
       '@types/node': 22.13.13
 
-  '@types/less@3.0.8(patch_hash=641e6c93bb737bac7fc283416857bd095cd85bcbcba63becb7a8bbcc78f73076)': {}
+  '@types/less@3.0.8': {}
 
   '@types/lodash@4.17.15': {}
 
