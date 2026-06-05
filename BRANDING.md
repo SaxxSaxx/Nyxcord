@@ -64,4 +64,5 @@ These values are referenced by all subsequent plan tasks. Do not change after Ta
 - v0.8.0 shipped: 2026-06-03 (command suite: /nyx-mood, /nyx-preset)
 - v0.9.0 shipped: 2026-06-04 (read-it-later: NyxcordSaved)
 - v0.10.0 shipped: 2026-06-05 (Theme Studio)
-- v0.11.0 (in progress): NyxcordProfile — wear OG Discord badges (Staff/Partner/HypeSquad/etc.) on your own profile (client-side, like Nightcord's customProfile) + own Nyxcord-branded injector (no more Equicord)
+- v0.11.0 shipped: 2026-06-05 (NyxcordProfile OG badges + own injector)
+- v0.12.0 (in progress): NyxcordName — custom display name on your own profile/popout/account-panel (experimental, client-side, opt-in; mirrors Nightcord's customProfile webpack anchors, no DOM observer)
