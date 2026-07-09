@@ -205,7 +205,7 @@
 /* Chat runs darker glass than the sidebars so message text always wins. */
 #app-mount [class*="chat_"] > [class*="chatContent_"],
 #app-mount [class*="chat_"] > [class*="content_"] {
-    background: hsl(var(--nyx-bg-h, 258) 28% 7% / calc(var(--nyx-glass-alpha, 6%) * 8));
+    background: hsl(var(--nyx-bg-h, 258) 28% 7% / min(var(--nyx-glass-alpha, 6%) * 8, 90%));
 }
 
 /* Message input floats as its own pill-ish island inside chat. */
