@@ -18,7 +18,7 @@ import { Button, Slider, useState } from "@webpack/common";
 
 const cl = classNameFactory("vc-nyxstudio-");
 const KEY = "NyxcordStudio";
-const NYX_VARS = ["--nyx-accent-h", "--nyx-glow", "--nyx-star-opacity", "--nyx-bg-h", "--nyx-bg-s"];
+const NYX_VARS = ["--nyx-accent-h", "--nyx-glow", "--nyx-star-opacity", "--nyx-bg-h", "--nyx-bg-s", "--nyx-glass-alpha", "--nyx-glass-blur"];
 
 interface Studio {
     active: boolean;
@@ -27,11 +27,13 @@ interface Studio {
     starfield: boolean;
     bgHue: number;
     bgSat: number;
+    glassAlpha: number;
+    glassBlur: number;
 }
 
-type NumberKey = "accentHue" | "glow" | "bgHue" | "bgSat";
+type NumberKey = "accentHue" | "glow" | "bgHue" | "bgSat" | "glassAlpha" | "glassBlur";
 
-const DEFAULTS: Studio = { active: false, accentHue: 270, glow: 45, starfield: true, bgHue: 258, bgSat: 30 };
+const DEFAULTS: Studio = { active: false, accentHue: 270, glow: 45, starfield: true, bgHue: 258, bgSat: 30, glassAlpha: 6, glassBlur: 12 };
 let studio: Studio = { ...DEFAULTS };
 
 const persist = () => set(KEY, studio);
@@ -40,6 +42,7 @@ function applyVars() {
     const root = document.documentElement.style;
     if (!studio.active) {
         for (const v of NYX_VARS) root.removeProperty(v);
+        document.documentElement.removeAttribute("data-nyx-noglass");
         return;
     }
     root.setProperty("--nyx-accent-h", String(studio.accentHue));
@@ -47,6 +50,10 @@ function applyVars() {
     root.setProperty("--nyx-star-opacity", studio.starfield ? "1" : "0");
     root.setProperty("--nyx-bg-h", String(studio.bgHue));
     root.setProperty("--nyx-bg-s", `${studio.bgSat}%`);
+    root.setProperty("--nyx-glass-alpha", `${studio.glassAlpha}%`);
+    root.setProperty("--nyx-glass-blur", `${studio.glassBlur}px`);
+    // Potato mode: blur 0 = no backdrop-filter at all (theme keys off this attr).
+    document.documentElement.toggleAttribute("data-nyx-noglass", studio.glassBlur === 0);
 }
 
 function StudioIcon(props: { width?: string | number; height?: string | number; }) {
@@ -120,6 +127,8 @@ function StudioTab() {
                 {slider("glow", "Glow", 100, 25)}
                 {slider("bgHue", "Background hue", 360, 30)}
                 {slider("bgSat", "Background saturation", 60, 10)}
+                {slider("glassAlpha", "Glass opacity (Glass moods)", 14, 2)}
+                {slider("glassBlur", "Glass blur — 0 disables glass (Glass moods)", 16, 4)}
                 <FormSwitch title="Starfield" value={studio.starfield} onChange={setStarfield} hideBorder />
             </div>
 
@@ -152,5 +161,6 @@ export default definePlugin({
     stop() {
         removeFromArray(SettingsPlugin.customEntries, e => e.key === "nyxcord_studio");
         for (const v of NYX_VARS) document.documentElement.style.removeProperty(v);
+        document.documentElement.removeAttribute("data-nyx-noglass");
     }
 });
