@@ -5,6 +5,7 @@
  */
 
 import { get, set } from "@api/DataStore";
+import { Settings } from "@api/Settings";
 import { Paragraph } from "@components/Paragraph";
 import { EquicordDevs } from "@utils/constants";
 import { Margins } from "@utils/margins";
@@ -13,7 +14,14 @@ import definePlugin from "@utils/types";
 import { RenderModalProps } from "@vencord/discord-types";
 import { Modal, SettingsRouter } from "@webpack/common";
 
+import { CLASSIC_URL, GLASS_URLS } from "../nyxcordTheme";
+
 const SEEN_KEY = "NyxcordWelcome_seen";
+
+function applyClassicLook() {
+    const enabled = Settings.enabledThemeLinks ?? [];
+    Settings.enabledThemeLinks = [...enabled.filter(u => !GLASS_URLS.includes(u)), CLASSIC_URL];
+}
 
 function WelcomeModal({ modalProps }: { modalProps: RenderModalProps; }) {
     return (
@@ -30,6 +38,14 @@ function WelcomeModal({ modalProps }: { modalProps: RenderModalProps; }) {
                         SettingsRouter.openUserSettings("nyxcord_presets_panel");
                     }
                 },
+                {
+                    text: "Prefer the classic look?",
+                    variant: "secondary",
+                    onClick: () => {
+                        applyClassicLook();
+                        modalProps.onClose();
+                    }
+                },
                 { text: "Maybe later", variant: "secondary", onClick: modalProps.onClose }
             ]}
         >
@@ -40,7 +56,7 @@ function WelcomeModal({ modalProps }: { modalProps: RenderModalProps; }) {
                 <strong>One-click presets.</strong> Set Nyxcord up for a vibe in a tap, Privacy, Persona, Power QoL, or Streamer, under Settings, then Nyxcord, then Presets. Hit the button below to browse them now.
             </Paragraph>
             <Paragraph className={Margins.bottom8}>
-                <strong>Signature theme.</strong> The Nyx night sky is on by default, with eight moods. Pick one under Settings, then Themes.
+                <strong>Signature theme.</strong> You are looking at Nyx Glass, frosted panels over a living nebula, with eight moods (plus eight classic flat moods). Pick one under Settings, then Themes, or take the classic look below.
             </Paragraph>
             <Paragraph>
                 <strong>Private by default.</strong> Analytics and Sentry are blocked, your typing indicator is hidden, and deleted messages stay visible.
