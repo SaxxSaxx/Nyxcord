@@ -38,3 +38,12 @@ ExtensionCache/
 
 # local agent worktrees/state
 .claude/
+
+# local tooling (kept out of the repo)
+CLAUDE.md
+GEMINI.md
+AGENTS.md
+.gemini/
+.claude/
+.superpowers/
+docs/superpowers/
